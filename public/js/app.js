@@ -11,8 +11,8 @@ const content4=document.querySelector('#content-4')
 wethForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     const location= search.value;
-    content1.textContent='Loading...'
-    content2.innerHTML=''
+    content1.textContent='Loading....';
+    content2.innerHTML='';
     fetch(`http://localhost:3000/weather?address=${location}`).then((response)=>{
    response.json().then((data)=>{
        if(data.error){
