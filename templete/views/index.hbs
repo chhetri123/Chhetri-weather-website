@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="./css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Weather</title>
+</head>
+<body>
+    <div class="container">
+     {{>header}}
+    <p class="content-0">Wanna see today weather!!!!!!!!</p>
+    <form>
+        <input type="text" placeholder="Search location ">
+        <button>Search</button>
+        <p id="content-1"></p>
+        <p id='content-4'></p>
+        <p id='content-2'></p>
+        <p id='content-3'></p>
+    </form>
+    
+    {{>footer}}
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>
