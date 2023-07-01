@@ -72,7 +72,7 @@ app.get('/products',(req,res)=>{
     })
 })
 
-app.get(('/weather'),(req,res)=>{
+app.get(('/weather'),async (req,res)=>{
     if(!req.query.address){
         res.send({
             error:'Provide an Address'
@@ -80,32 +80,19 @@ app.get(('/weather'),(req,res)=>{
     
     }else{
 
-    
+    try{
+        const citiyData=await weather(req.query.address)
+        const description= await location(citiyData.long,citiyData.lat)
+        res.send({
+            weather:citiyData,
+            discription:description
+         })  
 
-    
-    weather(req.query.address,(error,data={})=>{
-        if(error){
-           res.send({error })
-        }else{
-        location(data.long,data.lat,(err,locData)=>{
-            if(err){
-                res.send({error})
-            
-            }else{
-             res.send({
-               weather:data,
-               discription:locData
-
-
-            })   
-            }
-         })
-         }
-        
-        })
+    }catch(error){
+        res.send({error:error.message} )
     }
+    }})
 
- })
     
 
 
