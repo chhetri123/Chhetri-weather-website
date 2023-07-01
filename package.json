@@ -7,12 +7,11 @@
     "chalk": "^4.1.0",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.22",
     "request": "^2.88.2"
   },
-  "devDependencies": {},
   "scripts": {
-    "start":"node src/express.js"
+    "start": "nodemon src/express.js"
   },
   "keywords": [],
   "author": "",
